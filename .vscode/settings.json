@@ -1,0 +1,7 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "audioCues.lineHasError": "on",
+    "debug.javascript.breakOnConditionalError": false,
+    "markdown.experimental.validate.enabled": true,
+    "typescript.tsserver.experimental.enableProjectDiagnostics": false
+}
