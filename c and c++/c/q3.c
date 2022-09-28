@@ -13,7 +13,7 @@ struct student
 	int total;
 	float average;
 	char grade;
-	struct student *next,*prev;
+	struct student *next;
 }*tail,*head,*temp,*cnode,*temp2,*temp3;
 int repetition(char a[])
 {
@@ -49,15 +49,11 @@ char grade(float a)
 }
 void creation()
 {
-    printf("Enter number of nodes: ");
-    scanf("%d",&n);n1=n;
     cnode=(struct student*)malloc(sizeof(struct student));
     cnode->next=NULL;
-    cnode->prev=NULL;
-    tail=cnode;
-    head=cnode;
-    int i;
-    for(i=0;i<n1;i++)
+    printf("Enter the number of students: ");
+    scanf("%d",&n);n1=n;
+    for(int i=0;i<n1;i++)
     {
         char a[10];
         printf("Enter regno: ");
@@ -78,7 +74,6 @@ void creation()
         {
             cnode=(struct student*)malloc(sizeof(struct student));
             cnode->next=NULL;
-            cnode->prev=NULL;
             if(repetition(a)==1)
             {
                 printf("The regno is repeated\n");
@@ -94,89 +89,35 @@ void creation()
                 cnode->total=cnode->mark1+cnode->mark1+cnode->mark3;
                 cnode->average=cnode->total/3;
                 cnode->grade=grade(cnode->average);
-                tail->next=cnode;
-                cnode->prev=tail;
-                tail=cnode;
-                printf("\n");
+                if(i%2==0)
+                {
+                    cnode->next=head;
+                    head=cnode;
+                    printf("\n");
+                }
+                else
+                {
+                    tail->next=cnode;
+                    tail=cnode;
+                    printf("\n");
+                }
             }
         }
     }
-    printf("\n");
 }
 void display()
 {
-	temp=head;
-	while(temp!=NULL)
-	{
-		printf("Regno: %s \nName: %s \navg: %f \ngrade: %c\n\n",temp->reg_num,temp->stud_name,temp->average,temp->grade);
-		temp=temp->next;
-	}
-}
-void count_grade()
-{
-    int s=0,a=0,b=0,c=0,d=0,e=0,f=0,n2=0;
     temp=head;
     while(temp!=NULL)
     {
-        if(temp->grade=='S')
-            s++;
-        else if(temp->grade=='A')
-            a++;
-        else if(temp->grade=='B')
-            b++;
-        else if(temp->grade=='C')
-            c++;
-        else if(temp->grade=='D')
-            d++;
-        else if(temp->grade=='E')
-            e++;
-        else if(temp->grade=='F')
-            f++;
-        else
-            n2++;
+        printf("%s",temp->reg_num);
         temp=temp->next;
     }
-    printf("\nThe number of students is %d\n",n);
-    if(s>0)
-        printf("The number of S grades are %d\n",s);
-    if(a>0)
-        printf("The number of A grades are %d\n",a);
-    if(b>0)
-        printf("The number of B grades are %d\n",b);
-    if(c>0)
-        printf("The number of C grades are %d\n",c);
-    if(d>0)
-        printf("The number of D grades are %d\n",d);
-    if(e>0)
-        printf("The number of E grades are %d\n",e);
-    if(f>0)
-        printf("The number of F grades are %d\n",f);
-    if(n2>0)
-        printf("The number of N grades are %d\n",n2);
-}
-void deletion(int index)
-{   
-    temp3=head;
-    for(int i=0;i<index-1;i++)
-        temp3=temp3->next;
-    if(index=0)
-        temp3
-}
-void delete_f()
-{
-
 }
 int main()
 {
-    printf("1. Creation\n\n");
-	creation();
-    printf("2. count grades\n\n");
-	count_grade();
-    printf("3. display\n\n");
+    creation();
     display();
-    //3.
-    printf("5. delete the F nodes\n\n");
-    deletion();
-	getch();
-	return 0;
+    getch();
+    return 0;
 }

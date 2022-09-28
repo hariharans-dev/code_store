@@ -1,10 +1,8 @@
-Question 1:
-
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
 #include<malloc.h>
-int n,n1,n90=0;
+int n,n1,n90=0,ihead=0,dhead=0;
 struct student
 {
     char stud_name[60];
@@ -65,7 +63,7 @@ void creation()
         scanf("%s",&a);
         if(i==0)
         {
-            strcpy(tail->reg_num,a);
+            strcpy(tail->reg_num,a);ihead+=9;
             printf("Enter name: ");
             scanf("%s",&tail->stud_name);
             printf("Enter mark1 mark2 mark3: ");
@@ -98,6 +96,7 @@ void creation()
             }
         }
     }
+    printf("\n");
 }
 void display()
 {
@@ -126,7 +125,7 @@ void deletion(int index)
 {
     if(index==0)
     {
-        head=head->next;
+        head=head->next;dhead+=1;
         temp=head;
     }
     else if(index==(n-1))
@@ -160,7 +159,7 @@ void avg()
         {
             if(n90==0)
             {
-                strcpy(tail1->reg_num,temp->reg_num);
+                strcpy(tail1->reg_num,temp->reg_num);ihead+=9;
                 strcpy(tail1->stud_name,temp->stud_name);
                 tail1->average=temp->average;
                 tail1->grade=temp->grade;
@@ -200,6 +199,8 @@ void avg()
 void display90()
 {
     temp=head1;
+    if(n90==0)
+        printf("There is no student with average of 90\n");
     while(temp!=NULL)
     {
         if(n90==0)
@@ -210,11 +211,21 @@ void display90()
 }
 int main()
 {
+    printf("1. Creation\n\n");
     creation();
+    printf("2. Traverse and print the nodes from first to last\n");
+    display();
+    printf("3. Traverse and print the nodes from last to first\n");
+    rev_display();
+    printf("4. Find and create node of student average greater than 90 and delete it from the original node\n\n");
     avg();
     display90();
+    printf("5. Traverse and print the remaining elements from the updated list\n");
+    display();
+    printf("6. The number of times the values of the head node is changed during insertion: \n\n");
+    printf("The count is %d\n\n",ihead);
+    printf("7. The number of times the values of the tail node is changed during deletion: \n\n");
+    printf("The count is %d\n",dhead);
+    getch();
     return 0;
 }
-
-Question 2:
-Question 3:
