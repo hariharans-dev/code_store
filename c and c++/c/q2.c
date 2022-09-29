@@ -2,7 +2,7 @@
 #include<conio.h>
 #include<string.h>
 #include<malloc.h>
-int n,n1;
+int n,n1,ihead=0,dhead=0;
 struct student
 {
 	char stud_name[60];
@@ -64,7 +64,7 @@ void creation()
         scanf("%s",&a);
         if(i==0)
         {
-            strcpy(tail->reg_num,a);
+            strcpy(tail->reg_num,a);ihead+=9;
             printf("Enter name: ");
             scanf("%s",&tail->stud_name);
             printf("Enter mark1 mark2 mark3: ");
@@ -102,7 +102,6 @@ void creation()
             }
         }
     }
-    printf("\n");
 }
 void display()
 {
@@ -112,6 +111,7 @@ void display()
 		printf("Regno: %s \nName: %s \navg: %f \ngrade: %c\n\n",temp->reg_num,temp->stud_name,temp->average,temp->grade);
 		temp=temp->next;
 	}
+    printf("\n");
 }
 void count_grade()
 {
@@ -155,17 +155,65 @@ void count_grade()
     if(n2>0)
         printf("The number of N grades are %d\n",n2);
 }
+void deletion(int index)
+{
+    if(index==0)
+    {
+        head=head->next;dhead++;
+        head->prev=NULL;
+    }
+    if(index==(n-1))
+    {
+        temp2=head;dhead++;
+        for(int i=0;i<(n-1);i++)
+            temp2=temp2->next;
+        temp2->next=NULL;
+        tail=temp2;
+    }
+    else
+    {
+        temp2=head;
+        for(int i=0;i<index-1;i++)
+            temp2=temp2->next;
+        temp2->next=temp2->next->next;
+    }
+}
+void del_fail()
+{
+    temp=head;
+    while(temp!=NULL)
+    {
+        if(temp->grade=='F')
+        {
+            temp2=head;int ind=0;
+            printf("Deleted node: \n\n");
+            printf("Regno: %s \nName: %s \navg: %f \ngrade: %c\n\n",temp->reg_num,temp->stud_name,temp->average,temp->grade);
+            printf("f. Traverse of the list: \n\n");
+            while(temp2!=temp)
+            {
+                ind++;
+                printf("Regno: %s \nName: %s \navg: %f \ngrade: %c\n\n",temp2->reg_num,temp2->stud_name,temp2->average,temp2->grade);
+                temp2=temp2->next;
+            }
+            deletion(ind);
+        }
+        temp=temp->next;
+    }
+}
 int main()
 {
-    printf("1. Creation\n\n");
+    printf("a. Creation\n\n");
 	creation();
-    printf("2. count grades\n\n");
-	count_grade();
-    printf("3. display\n\n");
+    printf("b. Count the number of grades\n\n");
+    count_grade();
+    printf("c. Traverse\n\n");
     display();
-    //3.
-    printf("5. delete the F nodes\n\n");
-    deletion();
+    printf("d. Count the number of times the head value is changed during insertion\n\n");
+    printf("The count is %d",ihead);
+    printf("e. delete all fail grade nodes and display\n\n");
+    del_fail();
+    printf("g. Count the number of times the head value is changed during deletion\n\n");
+    printf("The count is %d",dhead);
 	getch();
 	return 0;
 }
