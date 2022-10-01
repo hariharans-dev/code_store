@@ -33,4 +33,181 @@
     </body>
 </html>
 
-<!--prac3-->
+<!--lists-->
+<!DOCTYPE html>
+<html>
+    <head><title>new webiste</title></head>
+    <body>
+        <!--unordered list-->
+        <h3>Grocery</h3>
+        <ul style="list-style: square">
+            <li>tomato</li>
+            <li>potato</li>
+            <li>peas</li>
+            <li>vegetable</li>
+            <!--ordered list-->
+        </ul>
+        <h3>my todo list</h3>
+        <ol type="i" start="100">
+            <li>digital assignment</li>
+            <li>html</li>
+            <li>css</li>
+        </ol>
+        <!--dicription list-->
+        <h3>Web dev languages</h3>
+        <br>
+        <dl>
+            <dt>html</dt>
+            <dd>-this is used for content writing</dd>
+            <dt>css</dt>
+            <dd>-this is for fonts and colours</dd>
+            <dt>javascript</dt>
+            <dd>-this is for effects and graphics</dd>
+        </dl>
+        <!--nested list-->
+        <ol>
+            <li>pizza</li>
+            <li>burger</li>
+            <li>different toppings
+                <ul style="list-style:square">
+                    <li>cheese</li>
+                    <li>olive</li>
+                    <li>tomato</li>
+                    <li>chicken</li>
+                </ul>
+            </li>
+            <li>french fries</li>
+        </ol>
+    </body>
+</html>
+
+<!--tables-->
+<!DOCTYPE html>
+<html>
+    <body>
+        <table border="1" bgcolor="black" height="100" width="'100">
+            <tr bgcolor="yellow" align="center">
+                <th>month: </th>
+                <td>january</td>
+                <td>febuary</td>
+                <td>marcdsfsfdsdfh</td>
+                <td>april</td>
+                <td>may</td>
+                <td>june</td>
+            </tr>
+            <tr bgcolor="orange" align="center">
+                <th>income</th>
+                <td>1000</td>
+                <td>2000</td>
+                <td>3000</td>
+                <td>5000</td>
+                <td>6000</td>
+                <td>30000</td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+<!--audio-->
+<!DOCTYPE html>
+<html>
+    <audio controls>
+        <source src="D:\code_repo\html\sources\notification_sound.mp3">
+    </audio>
+</html
+
+<!--videos-->
+<!DOCTYPE html>
+<html>
+    <video controls autoplay muted loop width="100%">
+        <source src="D:\code_repo\html\sources\WIN_20220930_20_40_07_Pro.mp4">
+    </video>
+</html>
+
+<!--buttons-->
+<!DOCTYPE html>
+<html>
+    <button name="simple button" type="button">
+        click
+    </button>
+
+    <button disabled>
+        disabled
+    </button>
+
+    <button autofocus>
+        autofocus
+    </button>
+    <button onclick="alert('help omg')">
+        alert
+    </button>
+    <a href="https://www.youtube.com/watch?v=cyuzt1Dp8X8">
+    <button>
+        youtube
+    </button>
+    <br>
+    <button style="background-color: red";>
+        css style
+    </button>
+    </a>
+</html>
+
+<!--forms-->
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <form action="DO_SOMETHING.PHP">
+            <label for="first_name">first name: </label>
+            <input type:"text" id="first_name" name="first_name" placeholder="spongbob">
+            <br>
+            <br>
+            <label for="last_name">first name: </label>
+            <input type:"text" id="last_name" name="last_name" placeholder="john">
+            <br><br>
+            <label for="title">gender: </label>
+            <label for="male" name="gender">male</label>
+            <input name="gender" id="male" type="radio" value="male">
+            <label for="female">female</label>
+            <input name="gender" id="female" type="radio" value="female">
+            <br><br>
+            <label for="payments">payment: </label>
+            <select for="payments">
+                <option value="visa">visa</option>
+                <option value="mastercard">mastercard</option>
+                <option value="rupe">rupe</option>
+                <option value="global">global</option>
+            </select>
+            <br><br>
+            <label for="email">email</label>
+            <input type="email" name="email" placeholder="abc.gmail">
+            <br><br>
+            <label for="dob">birthday</label>
+            <input type="date" name="birthday" placeholder="01-01-0101" min="01-01-2000" max="01-01-2022">
+            <br><br>
+            <label for="quantity">quantity: </label>
+            <input type="number" name="quantity" id="quantity" min="0" max="100">
+            <br><br>
+            <label for="phone">phone: </label>
+            <input type="tel" id="phone" name="phone">
+            <br><br>
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" minlength="0" maxlength="10" placeholder="max 12 char">
+            <br><br>
+            <label for="rate_us">rate us</label>
+            1<input type="range" step="25" name="rate_us">5
+            <br><br>
+            <label for="subscribe">subscribe</label>
+            <input type="checkbox" name="subscribe" id="subscribe">
+            <br><br>
+            <label for="file">file</label>
+            <input type="file" id="file" accept=".txt">
+            <br><br>
+            <input type="reset">
+            <input type="submit">
+        </form>
+
+    </body>
+</html>
+
+<!---->
