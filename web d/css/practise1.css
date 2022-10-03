@@ -5,6 +5,11 @@ h1{
     text-align: center;
     background-color: aquamarine;
 }
+label{
+    color: blue;
+}
 p{
-    color: blueviolet;
+    background-color: red;
+    font-family: sans-serif;
+    font-size: large;
 }
