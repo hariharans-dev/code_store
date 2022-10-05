@@ -1,46 +1,30 @@
 #include<iostream>
 #include<conio.h>
 using namespace std;
-struct stack
+void display(int a[],int size)
 {
-    char a[20];
-    int top;
-    stack()
-    {
-        top=-1;
-    }
-}st;
-char pop()
-{
-    char e=st.a[st.top];
-    return e;
-}
-void push(char e)
-{
-    st.a[++st.top]=e;
+    for(int i=0;i<size;i++)
+        cout<<a[i]<<" ";
+    cout<<endl;
 }
 int main()
 {
-    int n;cin>>n;
-    while(n>0)
+    int a[]={100,22,33,44,35,90,88,77,101,99};int size=10;
+    for(int i=0;i<size-1;i++)
     {
-        string s;cin>>s;int count=0;
-        for(int i=0;s[i]!='\0';i++)
-            count++;
-        for(int i=count-1;i>=0;i--)
+        for(int j=0;j<i;j++)
         {
-            if(s[i]!=' ')
-                push(s[i]);
-            else
+            if(a[i]<a[j])
             {
-                if(st.top!=-1)
-                    cout<<pop();
-                cout<<" ";
-            }
+                int temp=a[i],k;
+                for(k=i;k<size;k++)
+                    a[k]=a[k-1];
+                a[k]=temp;
+                break;
+            }   
         }
-        cout<<count<<endl;
-        n--;
     }
+    display(a,size);
     getch();
     return 0;
 }
