@@ -41,6 +41,23 @@ void selection_sort(int a[],int size)
 }
 void insertion_sort(int a[],int size)
 {
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if(a[i]<a[j])
+            {
+                int temp=a[i];
+                while(i>j)
+                {
+                    a[i]=a[i-1];
+                    i--;
+                }
+                a[i]=temp;
+                break; 
+            }
+        }
+    }
     display(a,size);
 }
 void merge_sort(int a[],int size)
@@ -76,11 +93,40 @@ void merge_sort(int a[],int size)
         b[k++]=a[j++];
     display(b,size);
 }
-void 
+int split (int a[],int lower,int upper)  
+{  
+    int pivot=a[upper]; 
+    int i = (lower - 1);  
+    for (int j = lower; j <= upper - 1; j++)  
+    {   
+        if (a[j]<pivot)  
+        {  
+            i++; 
+            int temp=a[i];  
+            a[i]=a[j];  
+            a[j]=temp;  
+        }  
+    }  
+    int temp=a[i+1];  
+    a[i+1]=a[upper];  
+    a[upper]=temp;  
+    return (i + 1);  
+}
+void quickSort(int a[],int lower,int upper,int size=0) 
+{
+    int i;
+    if(lower<upper)
+    {
+        i=split(a,lower,upper);
+        quickSort(a,lower,i-1);
+        quickSort(a,i+1,upper);
+    }
+    display(a,size);
+}    
 int main()
 {
     int a[]={101,99,88,100,77,76,40,32,33,10};int size=10;
-    merge_sort(a,size);
+    quickSort(a,0,size-1,size);
     getch();
     return 0;
 }
