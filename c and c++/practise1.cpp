@@ -68,7 +68,6 @@ int rec(struct node *r,int item)
 }
 void search(int p=0,int item=0)
 {
-    cout << "
     if(p==0)
         cout<<"Enter the searching element: ";cin>>item;
     rec(root,item);
