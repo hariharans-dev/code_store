@@ -44,7 +44,7 @@ void inorder(struct node *r)
 }
 void creation()
 {
-    int n;cout<<"Enter the number of nodes";cin>>n;
+    int n;cout<<"Enter the number of nodes: ";cin>>n;
     for (int i = 0; i < n; i++)
     {
         int item;cout<<"Enter item: ";cin>>item;
@@ -69,17 +69,28 @@ int rec(struct node *r,int item)
 void search(int p=0,int item=0)
 {
     if(p==0)
+    {
         cout<<"Enter the searching element: ";cin>>item;
+    }
     rec(root,item);
     if(present==1)
         cout<<"present"<<endl;
     else
         cout<<"not present"<<endl;
 }
+// int find_min(struct node *r)
+// {
+//     if(r!=NULL)
+//     {  
+//         find_min(r->left);
+//         return r->data;
+//     }
+// }
 int main()
 {
     creation();
-    search(1,5);
+    // cout<<find_min(root);
+    // inorder(root);
     getch();
     return 0;
 }
