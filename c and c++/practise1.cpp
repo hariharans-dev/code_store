@@ -75,7 +75,6 @@ void search(int p=0,int item=0)
         cout<<"present"<<endl;
     else
         cout<<"not present"<<endl;
-
 }
 int main()
 {
