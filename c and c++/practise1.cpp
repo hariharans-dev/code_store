@@ -1,148 +1,87 @@
 #include<iostream>
 #include<conio.h>
 using namespace std;
-void display(int a[],int size)
+int present;
+struct node
 {
-    for(int i=0;i<size;i++)
-        cout<<a[i]<<" ";
-    cout<<endl;
+    int data;
+    struct node *left,*right;
+}*root,*cnode;
+struct node * newnode(int item)
+{
+    cnode=new node();
+    cnode->left=NULL;
+    cnode->right=NULL;
+    cnode->data=item;
+    return cnode;
 }
-void bubble_sort(int a[],int size)
+void insert(struct node *r,int item)
 {
-    for(int i=0;i<size-1;i++)
+    if(item<=r->data)
     {
-        for(int j=0;j<size-i-1;j++)
-        {
-            if(a[j]>a[j+1])
-            {
-                int temp=a[j];
-                a[j]=a[j+1];
-                a[j+1]=temp;
-            }
-        }
-    }
-    display(a,size);
-}
-void selection_sort(int a[],int size)
-{
-    for(int i=0;i<size-1;i++)
-    {
-        for(int j=i+1;j<size;j++)
-        {
-            if(a[i]>a[j])
-            {
-                int temp=a[i];
-                a[i]=a[j];
-                a[j]=temp;
-            }
-        }
-    }
-    display(a,size);
-}
-void insertion_sort(int a[],int size)
-{
-    for (int i = 0; i < size; i++)
-    {
-        for (int j = 0; j < i; j++)
-        {
-            if(a[i]<a[j])
-            {
-                int temp=a[i];
-                while(i>j)
-                {
-                    a[i]=a[i-1];
-                    i--;
-                }
-                a[i]=temp;
-                break; 
-            }
-        }
-    }
-    display(a,size);
-}
-void merge_sort(int a[],int size)
-{
-    int c=size/2;
-    for(int i=0;i<c-1;i++)
-        for(int j=i+1;j<c;j++)
-            if(a[i]>a[j])
-            {
-                int temp=a[i];
-                a[i]=a[j];
-                a[j]=temp;
-            }
-    for(int i=c;i<size-1;i++)
-        for(int j=i+1;j<size;j++)
-            if(a[i]>a[j])
-            {
-                int temp=a[i];
-                a[i]=a[j];
-                a[j]=temp;
-            }
-    int i=0,j=c,k=0,b[size];
-    while((i<c)&&(j<size))
-    {
-        if(a[i]<a[j])
-            b[k++]=a[i++];
+        if(r->left!=NULL)
+            insert(r->left,item);
         else
-            b[k++]=a[j++];
+            r->left=newnode(item);
     }
-    while(i<c)
-        b[k++]=a[i++];
-    while(j<size)
-        b[k++]=a[j++];
-    display(b,size);
-}
-int split (int a[],int lower,int upper)  
-{  
-    int pivot=a[upper]; 
-    int i = (lower - 1);  
-    for (int j = lower; j <= upper - 1; j++)  
-    {   
-        if (a[j]<pivot)  
-        {  
-            i++; 
-            int temp=a[i];  
-            a[i]=a[j];  
-            a[j]=temp;  
-        }  
-    }  
-    int temp=a[i+1];  
-    a[i+1]=a[upper];  
-    a[upper]=temp;  
-    return (i + 1);  
-}
-void quickSort(int a[],int lower,int upper,int size=0) 
-{
-    int i;
-    if(lower<upper)
+    else if(item>r->data)
     {
-        i=split(a,lower,upper);
-        quickSort(a,lower,i-1);
-        quickSort(a,i+1,upper);
+        if(r->right!=NULL)
+            insert(r->right,item);
+        else    
+            r->right=newnode(item);
+        
     }
-    display(a,size);
-}   
-void shellSort(int a[], int size) 
-{ 
-    for(int gap= size/2;gap>0;gap/=2) 
-    { 
-        for(int i=gap;i<size;i+=1) 
-        { 
-            int temp=a[i]; 
-            int j;             
-            for (j = i; j >= gap && a[j - gap] > temp; j -= gap) 
-                a[j] = a[j - gap]; 
-            a[j] = temp; 
-        } 
-    } 
-    display(a,size);
-} 
-void linear
+}
+void inorder(struct node *r)
+{
+    if(r!=NULL)
+    {
+        inorder(r->left);
+        cout<<r->data<<" ";
+        inorder(r->right);
+    }
+}
+void creation()
+{
+    int n;cout<<"Enter the number of nodes";cin>>n;
+    for (int i = 0; i < n; i++)
+    {
+        int item;cout<<"Enter item: ";cin>>item;
+        if(i==0)
+            root=newnode(item);
+        else
+            insert(root,item);
+    }
+}
+int rec(struct node *r,int item)
+{
+    if((r!=NULL)&&(present!=1))
+    {
+        if(r->data==item)
+            present=1;
+        else if(item<r->data)
+            rec(r->left,item);
+        else
+            rec(r->right,item);
+    }
+}
+void search(int p=0,int item=0)
+{
+    cout << "
+    if(p==0)
+        cout<<"Enter the searching element: ";cin>>item;
+    rec(root,item);
+    if(present==1)
+        cout<<"present"<<endl;
+    else
+        cout<<"not present"<<endl;
+
+}
 int main()
 {
-    int a[]={101,99,88,100,77,76,40,32,33,10};int size=10;
-    shellSort(a,size);
+    creation();
+    search(1,5);
     getch();
     return 0;
 }
