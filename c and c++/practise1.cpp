@@ -122,11 +122,27 @@ void quickSort(int a[],int lower,int upper,int size=0)
         quickSort(a,i+1,upper);
     }
     display(a,size);
-}    
+}   
+void shellSort(int a[], int size) 
+{ 
+    for(int gap= size/2;gap>0;gap/=2) 
+    { 
+        for(int i=gap;i<size;i+=1) 
+        { 
+            int temp=a[i]; 
+            int j;             
+            for (j = i; j >= gap && a[j - gap] > temp; j -= gap) 
+                a[j] = a[j - gap]; 
+            a[j] = temp; 
+        } 
+    } 
+    display(a,size);
+} 
+void linear
 int main()
 {
     int a[]={101,99,88,100,77,76,40,32,33,10};int size=10;
-    quickSort(a,0,size-1,size);
+    shellSort(a,size);
     getch();
     return 0;
 }
