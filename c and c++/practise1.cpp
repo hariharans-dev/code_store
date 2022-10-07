@@ -1,7 +1,7 @@
 #include<iostream>
 #include<conio.h>
 using namespace std;
-int present;
+int present,miin;
 struct node
 {
     int data;
@@ -54,7 +54,7 @@ void creation()
             insert(root,item);
     }
 }
-int rec(struct node *r,int item)
+void rec(struct node *r,int item)
 {
     if((r!=NULL)&&(present!=1))
     {
@@ -78,19 +78,35 @@ void search(int p=0,int item=0)
     else
         cout<<"not present"<<endl;
 }
-// int find_min(struct node *r)
-// {
-//     if(r!=NULL)
-//     {  
-//         find_min(r->left);
-//         return r->data;
-//     }
-// }
+int find_min(struct node *r)
+{
+    if(r!=NULL)
+    {
+        find_min(r->left);
+        if(r->data<miin)
+            miin=r->data;
+    }
+    return miin;
+}
+int find_max(struct node *r)
+{
+    if(r!=NULL)
+    {
+        find_max(r->right);
+        if(r->data>miin)
+            miin=r->data;
+    }
+    return miin;
+}
 int main()
 {
     creation();
-    // cout<<find_min(root);
-    // inorder(root);
+    
+    // miin=root->data;
+    // cout<<find_max(root);
+    // // inorder(root);
+    // // search(1,6);
+
     getch();
     return 0;
 }
