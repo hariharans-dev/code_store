@@ -1,48 +1,37 @@
 #include <iostream>
 #include <conio.h>
-#include<string.h>
 using namespace std;
-struct stack
-{
-	char s[20];
-	int top;
-	stack()
-	{
-		top=-1;
-	}
-}st;
-int push(char c)
-{
-	st.s[++st.top] = c;
-}
-char pop()
-{
-	char e=st.s[st.top];
-	st.top--;
-	return e;
-}
-int main() 
+int main()
 {
 	int n;cin>>n;
-	while(n>=0)
+	while(n>0)
 	{
-		string s;
-		getline(cin,s);
-		for(int i=s.length()-1;i>=0;i--)
-		{
-			if(s[i]!=' ')
-				push(s[i]);
-			else 
-			{
-				while(st.top!=-1)
-					cout<<pop();
-				cout<<" ";
-			}
-		}
-		while(st.top!=-1)
-			cout<<pop();
+		int c;cin>>c;int a1[c],a2[c],min;
+		for(int i=0;i<c;i++)
+			cin>>a1[i];
+		for(int i=0;i<c;i++)
+			cin>>a2[i];
+		for(int i=0;i<c-1;i++)
+			for(int j=i;j<c;j++)
+				if(a1[i]<a1[j])
+				{
+					int temp=a1[i];
+					a1[i]=a1[j];
+					a1[j]=temp;
+				}
+		for(int i=0;i<c-1;i++)
+			for(int j=i;j<c;j++)
+				if(a2[i]>a2[j])
+				{
+					int temp=a2[i];
+					a2[i]=a2[j];
+					a2[j]=temp;
+				}
+		for(int i=0;i<c;i++)
+			min+=a1[i]*a2[i];
+		cout<<min<<endl;
 		n--;
 	}
-    getch();
+	getch();
 	return 0;
 }
