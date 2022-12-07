@@ -1,37 +1,66 @@
-#include <iostream>
-#include <conio.h>
+#include<iostream>
+#include<conio.h>
 using namespace std;
+struct node
+{
+    int data;
+    struct node *left,*right;
+}*root,*cnode;
+struct node * newnode(int item)
+{
+    cnode=new node();
+    cnode->left=NULL;
+    cnode->right=NULL;
+    cnode->data=item;
+    return cnode;
+}
+void creation()
+{
+	root=newnode(1);
+	root->left=newnode(2);
+	root->right=newnode(3);
+	root->left->left=newnode(4);
+	root->left->right=newnode(5);
+	root->right->left=newnode(6);
+	root->right->right=newnode(7);
+}
+void preorder(struct node *r)
+{
+     if(r!=NULL)
+     {
+    	cout<<r->data<<" ";
+        preorder(r->left);
+        preorder(r->right);
+    }
+} 
+void inorder(struct node *r)
+{
+     if(r!=NULL)
+     {
+        inorder(r->left);
+        cout<<r->data<<" ";
+        inorder(r->right);
+    }
+}
+void postorder(struct node *r)
+{
+    if(r!=NULL)
+    {
+    	postorder(r->left);
+        postorder(r->right);
+        cout<<r->data<<" ";
+    }
+} 
+
 int main()
 {
-	int n;cin>>n;
-	while(n>0)
-	{
-		int c;cin>>c;int a1[c],a2[c],min;
-		for(int i=0;i<c;i++)
-			cin>>a1[i];
-		for(int i=0;i<c;i++)
-			cin>>a2[i];
-		for(int i=0;i<c-1;i++)
-			for(int j=i;j<c;j++)
-				if(a1[i]<a1[j])
-				{
-					int temp=a1[i];
-					a1[i]=a1[j];
-					a1[j]=temp;
-				}
-		for(int i=0;i<c-1;i++)
-			for(int j=i;j<c;j++)
-				if(a2[i]>a2[j])
-				{
-					int temp=a2[i];
-					a2[i]=a2[j];
-					a2[j]=temp;
-				}
-		for(int i=0;i<c;i++)
-			min+=a1[i]*a2[i];
-		cout<<min<<endl;
-		n--;
-	}
+	creation();
+	preorder(root);
+	cout<<endl;
+	inorder(root);
+	cout<<endl;
+	postorder(root);
+	cout<<endl;
 	getch();
 	return 0;
 }

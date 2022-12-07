@@ -1,5 +1,5 @@
 {
-    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.errorSquiggles": "Disabled",
     "audioCues.lineHasError": "off",
     "debug.javascript.breakOnConditionalError": false,
     "markdown.experimental.validate.enabled": true,
