@@ -1,5 +1,13 @@
-let b=1;
-function oc(a){
-    b=a;
+let ab;
+let ba;
+function oc(b){
+    ab=b;
 };
-document.getElementById('h3').innerHTML=b;
+function oc1(b){
+    ba=b;
+    oc2();
+};
+function oc2(){
+    c=ba+ab;
+    document.getElementById('h1').innerHTML=c;
+};
