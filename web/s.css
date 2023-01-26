@@ -1,0 +1,24 @@
+h1{
+    text-align: center;
+}
+.ug{
+    float: left;
+    width: 33%;
+    border: 1px solid;
+    margin-right: 3px;
+}
+.pg{
+    width: 33%;
+    float: left;
+    border: 1px solid;
+    margin-left: 3px;
+    margin-right: 1px;
+    margin-top: 95px;
+}
+.rp{
+    border: 1px solid;
+    float: right;
+    margin-top: 0px;
+    width: 32%;
+    margin-top: 113px;
+}
