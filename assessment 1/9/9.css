@@ -1,0 +1,63 @@
+.b2{
+    border-right: 40px solid;
+    border-left: 40px solid;
+    border-top: 30px solid;
+    border-bottom: 30px solid;
+    border-color: grey;
+}
+.a1{
+    font-size: 60px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.a2{
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.a3{
+    margin-right: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: black;
+    color: white;
+    font-size: x-large;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+img{
+    height: 250px;
+}
+.a5{
+    background-color: green;
+    width: 150px;
+    height: 120px;
+    margin-left: 5px;
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-size: xxx-large;
+    padding-top: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.a6{
+    margin-left: 5px;
+}
+.a7{
+    margin-top: 20px;
+    font-size: xx-large;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+.a8{
+    margin-top: 20px;
+    font-size: large;
+    font-weight: 500;
+}
+.a9{
+    margin-bottom: 50px;
+}

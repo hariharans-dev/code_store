@@ -1,24 +1,52 @@
-h1{
-    text-align: center;
+body {
+    font-family: 'Times New Roman', Times, serif;
 }
-.ug{
-    float: left;
-    width: 33%;
-    border: 1px solid;
-    margin-right: 3px;
-}
-.pg{
-    width: 33%;
-    float: left;
-    border: 1px solid;
-    margin-left: 3px;
-    margin-right: 1px;
-    margin-top: 95px;
-}
-.rp{
-    border: 1px solid;
-    float: right;
+
+form {
+    border: 1px solid black;
+    /* border-top: 0ch; */
     margin-top: 0px;
-    width: 32%;
-    margin-top: 113px;
+    margin-left: 20%;
+    margin-right: 15%;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    background-color: whitesmoke;
+    /* padding: 5px; */
+    padding-top: 0;
+}
+
+form>header {
+    text-align: right;
+    background-color: grey;
+    padding-top: 0%;
+    padding-right: 20px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+form>h4 {
+    text-align: right;
+    padding-right: 50px;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-top: 0px;
+    margin-bottom: 10px;
+}
+
+.labels {
+    /* column-width: 20%; */
+    text-align: right;
+    margin: 2px;
+    width: 170px;
+    padding: 5px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    margin: 5px;
+    padding: 5px;
 }

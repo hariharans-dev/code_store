@@ -1,0 +1,70 @@
+body{
+    background-image: url('broadband.png');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 100%;
+    background-position-x: 0;
+    background-position-y: 0;
+    background-color: gray;
+}
+.a1{
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 70px;
+}
+.a2{
+    background-image: linear-gradient(rgba(239, 236, 236, 0.705),rgba(234, 229, 229, 0));
+    color: white;
+    margin-top: 70px;
+}
+.a3{
+    font-size: 40px;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 80px;
+    padding-left: 80px;
+}
+.aa1{
+    background-color: orangered;
+}
+.a5{
+    font-size: large;
+    padding-top: 50px;
+}
+.a6{
+    padding-bottom: 20px;
+}
+img{
+    padding-right: 10px;
+}
+.a7{
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+.aa2{
+    background-color: purple;
+}
+.a8{
+    margin-left: 10px;
+}
+.aa5{
+    background-color: aquamarine;
+}
+.a9{
+    margin-top: 70px;
+    color: white;
+    font-size: large;
+    text-align: center;
+}
+n{
+    color: green;
+}

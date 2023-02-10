@@ -1,0 +1,18 @@
+body{
+    background-color: grey;
+}
+.a1{
+    background-color: white;
+    padding-top: 1px;
+}
+.a2{
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 45px;
+    font-weight: 700;
+}
+.a3{
+    font-size: x-large;
+    padding-left: 40px;
+    padding-bottom: 40px;
+}

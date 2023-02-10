@@ -1,0 +1,63 @@
+.a1{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 60px;
+}
+.a2{
+    font-size: 20px;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+.a4{
+    border: 1px solid rgba(128, 128, 128, 0.353);
+    margin-right: 15px;
+    margin-top: 40px;
+}
+.a5{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.353);
+    font-size: x-large;
+    font-weight: 700;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(128, 128, 128, 0.127);
+}
+.a6{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.a7{
+    text-align: center;
+    font-size: large;
+    font-weight: 500;
+}
+.a8{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    border: 1px solid;
+    font-weight: 700;
+}
+.aa1{
+    color: rgb(105, 141, 233);
+}
+.aa2{
+    background-color: rgb(105, 141, 233);
+    color: white;
+}
+.a10{
+    margin-left: 60px;
+}
