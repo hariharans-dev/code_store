@@ -1,23 +1,23 @@
-let total=0,n;
-n=window.prompt("Enter the number of customers: ");
-document.write("Number of customers is "+n+"<br>");
-let i=1;
-while(i<=n){
-    let time=window.prompt("Enter the number of parked hours: ");
-    total+=calculate(time,i);
-    i++;
+let n=prompt("Enter the number of customers: ");
+let total=0,i=1;
+if(n==0){
+    document.write("<h1>There is no customers to park !!</h1><br>");
 }
-document.write("The total parking cost of customers is "+total+"<br>");
-function calculate(time,count){
-    let cost=2;
-    if(time>3){
-        cost=2+(time-3)*(0.5);
-        if(cost>10){
-            cost=10;
+else{
+    while(i<=n){
+        let h=prompt("Enter the number of parking hours: ");
+        let price=2,per=0.5;
+        if(!h<=3){
+            if(h>=24){
+                price=10;
+            }
+            else{
+                price=price+per*(h-3);
+            }
         }
+        total+=price;
+        document.write("<h1>The parking hourse is "+h+" hours and the charge is "+price+"</h1><br>")
+        i++;
     }
-    document.write("<h1>parking cost of customer </h1>"+count+"<h1>whose time is </h1>"+time+"<h1> hours and $ </h1>"+cost+"<br>");
-    return cost;
 }
-
-
+document.write("<h1>The total revenue of the parking agency is "+total+"</h1><br>")
