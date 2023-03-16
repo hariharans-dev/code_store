@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style1.css">
-  <title>file</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/jquery/node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-  Name: <input type="text" id="a1"><br><br>
-  Address: <input type="text" id="a3"><br><br>
-  <button onclick="func()">select</button>
-  <h4 id="a2"></h4>
-  <h4 id="a4"></h4>
-  <script src="script1.js"></script>
+    <h1>todo list</h1>
+    <input type="text" id="text">
+    <button onclick="add()">add</button>
+    <button onclick="remove()">remove</button>
+    <ul id="list"></ul>
+    <script>
+        function add(){
+            let val=$("#text").val();
+            $("#list").append("<li>"+val+"</li>");
+            $("#text").val()="";
+        }
+        function remove(){
+            let val=$("#text").val().toLowerCase();
+            
+        }
+    </script>
 </body>
 </html>

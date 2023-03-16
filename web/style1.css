@@ -1,10 +1,23 @@
-h4{
-    color: red;
-    background-color: aqua;
+.heading{
+    width: 100%;
+    background-color: red;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
-#a1{
-    margin-left: 15px;
+.ht{
+    color:white;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.a4{
-    color: red;
+.calc{
+    font-size: larger;
+    font-weight: 500;
+    color: white;
+    background-color: black;
+}
+.a1{
+    margin-left: auto;
+    margin-right: auto;
 }
