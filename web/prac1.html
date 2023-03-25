@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="/jquery/node_modules/jquery/dist/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/jquery/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body>
-    <h1>todo list</h1>
-    <input type="text" id="text">
-    <button onclick="add()">add</button>
-    <button onclick="remove()">remove</button>
-    <ul id="list"></ul>
-    <script>
-        function add(){
-            let val=$("#text").val();
-            $("#list").append("<li>"+val+"</li>");
-            $("#text").val()="";
-        }
-        function remove(){
-            let val=$("#text").val().toLowerCase();
-            
-        }
-    </script>
+    <form action="GET">
+        <input type="text" name="name">
+        <input type="number" name="age">
+        <input type="submit">
+    </form>
 </body>
 </html>
